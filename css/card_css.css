@@ -1,0 +1,49 @@
+.welcome_area {
+    text-align: left;
+    padding-top: 7%;
+    padding-bottom: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.welcome_area .icon {
+    color: #1e56a0;
+    margin-bottom: 1rem;
+}
+
+.welcome_area .fb {
+    padding: 5%;
+}
+
+.welcome_area h3 {
+    color: #000;
+    font-size: 1.5rem;
+}
+
+.welcome_area h1 {
+    text-transform: uppercase;
+    padding-bottom: 15px;
+    font-size: 48px;
+    color: #000;
+}
+
+
+.welcome_area .carddesign p {
+    color: #222222;
+    text-align: left;
+    font-size: 1rem;
+}
+
+
+ul {
+    list-style: none;
+}
+
+ul li::before {
+    content: "\2022";
+    color: #1e56a0;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1.3em;
+}
