@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <b:if cond='data:view.isPost'>
+<style>
+.active{color:#f88;font-weight:700}.anutrickzTOC{padding:5px 10px}.anutrickzTOC,.anutrickzTOC ol{list-style:none;margin:0;position:relative}.anutrickzTOC ol{padding:5px 0}.anutrickzTOC ol li:before{border-radius:50px;color:#222;content:" "counter(toc) ". ";display:flex;float:left;font-size:14px;font-weight:400;line-height:30px;margin-right:5px;padding:0;position:relative;text-align:center;vertical-align:middle;z-index:9999}.anutrickzTOC ol li{counter-increment:toc}#anutrickzTOC a{-webkit-line-clamp:2;-webkit-box-orient:vertical;display:-webkit-box;font-size:15px;line-height:1.2;opacity:.9;overflow:hidden;transition:all .3s}#at_T ol::-webkit-scrollbar{width:3px}#at_T ol::-webkit-scrollbar-track{background:#157ba6;border-radius:0}#at_T ol::-webkit-scrollbar-thumb{background:#153b4b;border-radius:0}:target{background:#40739e;color:#fff!important;padding:5px 10px;scroll-margin-top:70px}ul.toc-module--tableofcontents--9o5Ey{background-color:#fff;border:1px solid #40739e;border-bottom-right-radius:15px;border-left:none;border-top-right-radius:15px;height:auto;left:0;margin:0;max-height:233px;overflow:hidden;padding:0;position:fixed;scrollbar-color:#367ee9 rgba(48,113,209,.3);scrollbar-width:thin;top:50%;-webkit-transform:translate3d(0,-50%,0);transform:translate3d(0,-50%,0);-webkit-transform:translate3d(-93%,-50%,0);transform:translate3d(-93%,-50%,0);transition:-webkit-transform .3s;transition:transform .3s;transition:transform .3s,-webkit-transform .3s;width:192px;z-index:9}ul.toc-module--tableofcontents--9o5Ey .toc-module--tochead--1veCW{background-color:#40739e;bottom:0;box-shadow:0 8px 15px #40739e;cursor:pointer;position:absolute;right:0;top:0;width:12px;z-index:5}ul.toc-module--tableofcontents--9o5Ey .toc-module--tochead--1veCW>p{align-items:center;color:#fff;display:flex;font-size:10px;font-weight:700;height:100%;justify-content:center;letter-spacing:3px;margin:0;pointer-events:none;position:absolute;-webkit-transform:rotate(-180deg);transform:rotate(-180deg);-webkit-transform-origin:center center;transform-origin:center center;width:100%;-webkit-writing-mode:vertical-lr;-ms-writing-mode:tb-lr;writing-mode:vertical-lr}ul.toc-module--tableofcontents--9o5Ey .toc-module--list--3ZllP{height:auto;max-height:233px;overflow-y:auto;padding-bottom:11.2px;padding-top:11.2px;top:0;z-index:2}ul.toc-module--tableofcontents--9o5Ey.toc-module--slideOut--2iwp0{-webkit-transform:translate3d(0,-50%,0);transform:translate3d(0,-50%,0)}
+</style>
+</b:if>
+  </head>
+  <body>
+    <b:if cond="data:view.isPost">
+      <ul class="toc-module--tableofcontents--9o5Ey css-0" id="tocUl">
+        <div class="toc-module--tochead--1veCW css-0" id="tocTrigger">
+          <p class="css-1">TOC</p>
+        </div>
+        <div class="toc-module--list--3ZllP css-0">
+          <div class="anutrickzTOC" id="at_T">
+            <ol id="anutrickzTOC" />
+          </div>
+        </div>
+      </ul>
+    </b:if>
+
+    ------warp code----
+    <div id="post-toc">
+      <data:post.body />
+    </div>
+    <b:if cond="data:view.isPost">
+      <script>
+        //<![CDATA[
+        $(function () {
+          $("#tocUl").click(function () {
+            $(this).toggleClass("toc-module--slideOut--2iwp0");
+          });
+        });
+        var TOCLirge = "on";
+        function anutrickzTOC() {
+          for (
+            var t = document.getElementById("post-toc").querySelectorAll("h2"),
+              e = 0;
+            e < t.length;
+            e++
+          )
+            t[e].setAttribute("attr", "h2");
+          for (
+            var l = document.getElementById("post-toc").querySelectorAll("h3"),
+              e = 0;
+            e < l.length;
+            e++
+          )
+            l[e].setAttribute("attr", "h3");
+          for (
+            var r = document.getElementById("post-toc").querySelectorAll("h4"),
+              e = 0;
+            e < r.length;
+            e++
+          )
+            r[e].setAttribute("attr", "h4");
+          for (
+            var o = document.getElementById("post-toc").querySelectorAll("h5"),
+              e = 0;
+            e < o.length;
+            e++
+          )
+            o[e].setAttribute("attr", "h5");
+          for (
+            var h = document.getElementById("post-toc").querySelectorAll("h6"),
+              e = 0;
+            e < h.length;
+            e++
+          )
+            h[e].setAttribute("attr", "h6");
+          var n = (e = headlength = gethead = attr = 0);
+          for (
+            e = 0,
+              headlength = document
+                .getElementById("post-toc")
+                .querySelectorAll("h2, h3, h4, h5, h6").length;
+            e < headlength;
+            e++
+          )
+            (getheada = (gethead = document
+              .getElementById("post-toc")
+              .querySelectorAll("h2, h3, h4, h5, h6")[e].textContent)
+              .split(" ")
+              .join("_")
+              .replace(/(\r\n|\n|\r)/gm, "")),
+              document
+                .getElementById("post-toc")
+                .querySelectorAll("h2, h3, h4, h5, h6")
+                [e].setAttribute("id", getheada),
+              (n =
+                "<li class='at_toc-" +
+                (attr = document
+                  .getElementById("post-toc")
+                  .querySelectorAll("h2, h3, h4, h5, h6")
+                  [e].getAttribute("attr")) +
+                "'><a href='#" +
+                getheada +
+                "'>" +
+                gethead +
+                "</a></li>"),
+              (document.getElementById("anutrickzTOC").innerHTML += n);
+        }
+        //]]>
+      </script>
+      <script>
+        //<![CDATA[
+        anutrickzTOC();
+        //]]>
+      </script></b:if
+    >
+    -----
+  </body>
+</html>
