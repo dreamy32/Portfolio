@@ -10,6 +10,7 @@
       content="https://api.pikwy.com/?tkn=125&d=3000&u=https%253A%252F%252Fdberube.dev&fs=0&w=1200&h=627&s=100&z=100&f=jpg"
     />
     <meta property="og:description" content="Portfolio Web de David Bérubé" />
+    <link rel="stylesheet" href="css/toast.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
       rel="stylesheet"
@@ -73,16 +74,19 @@
           </div>
           <nav class="nav nav-masthead justify-content-center">
             <a class="nav-link active" href="index.html">Qui suis-je?</a>
-            <a class="nav-link" href="projet-integration.html">Projets</a>
-            <a
-              class="nav-link"
-              href="https://getbootstrap.com/docs/4.0/examples/cover/#"
-              >Highlights</a
+            <a class="nav-link" href="projet-integration.html"
+              >Projet d'Intégration</a
             >
             <a
               class="nav-link"
-              href="https://getbootstrap.com/docs/4.0/examples/cover/#"
-              >Contact</a
+              href="#footer"
+              ><i class="fa-solid fa-hashtag"></i>&nbsp;Réseaux Web</a
+            >
+            <a
+              class="nav-link"
+              href="mailto:davidberube2003@outlook.com?subject=Portfolio Web&body=Bonjour David,"
+              onclick="alert('En appuyant sur OK, votre application de messagerie démarrera.')"
+              ><i class="fa-solid fa-at"></i>&nbsp;Contact</a
             >
           </nav>
         </div>
@@ -155,8 +159,8 @@
             <br />
             <span class="fst-italic">
               <b>
-                Vous pouvez voir ci-dessous les objectifs que je me
-                suis fixés et que j'ai réalisé.
+                Vous pouvez voir ci-dessous les objectifs que je me suis fixés
+                et que j'ai réalisé.
               </b>
             </span>
           </p>
@@ -228,18 +232,80 @@
         </div>
       </main>
 
-      <footer class="mastfoot mt-auto">
+      <footer id="footer" class="mastfoot mt-auto">
         <div class="inner">
-          <p>
-            © David Bérubé
-          </p>
+          <div>
+            <span>© David Bérubé</span>
+            <p>
+              <a
+                class="mastfoot text-decoration-none"
+                href="https://www.linkedin.com/in/davidberube04/"
+                ><i class="fa-brands fa-linkedin"></i>&nbsp;LinkedIn</a
+              >&nbsp;
+              <a
+                class="mastfoot text-decoration-none"
+                href="https://github.com/dreamy32"
+                ><i class="fa-brands fa-github"></i>&nbsp;Github</a
+              >
+              &nbsp;
+              <a
+                class="mastfoot text-decoration-none"
+                href="https://itch.io/profile/drseek32"
+                ><i class="fa-brands fa-itch-io"></i>&nbsp;itch.io</a
+              >
+            </p>
+          </div>
         </div>
       </footer>
+      <!-- region toast -->
+      <div class="toast" id="infoToast" data-bs-autohide="false">
+        <div class="toast-header">
+          <img
+            src="https://avatars.githubusercontent.com/u/75817900"
+            alt="Image de profil"
+            class="rounded-2"
+            width="36px"
+          />&nbsp;&nbsp;
+          <strong class="me-auto"> David Bérubé </strong>
+
+          <small>24 janvier à 17h00</small>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="toast-body">
+          <h6>
+            Bienvenue sur mon portfolio web!&nbsp;<span class="h4">👋</span>
+          </h6>
+          <hr style="margin: 0.5em auto" />
+          Pour découvrir mes <b>compétences</b>/<b>réalisations</b> concrètes de
+          mon travail, parcourir attentivement:
+          <a class="link-info" href="projet-integration.html"
+            ><strong>Projet d'Intégration (JV)</strong></a
+          >
+          <br />
+          <small
+            ><i
+              >Vous y trouverez un aperçu concret de mes <b>capacités</b> et de
+              la manière dont elles sont <b>mises en œuvre</b>.</i
+            ></small
+          >
+        </div>
+      </div>
+      <!--endregion-->
     </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
@@ -255,5 +321,11 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
     ></script>
+    <script defer>
+      let infoToast = $("#infoToast");
+      let msDelay = 7500;
+      let showToastOnDelay = setTimeout(() => infoToast.toast("show"), msDelay);
+      $().ready(showToastOnDelay);
+    </script>
   </body>
 </html>
