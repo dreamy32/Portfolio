@@ -1,0 +1,15 @@
+.toast{
+    position: fixed;
+    right: 1%;
+    bottom: 2%;
+}
+.toast > *{
+    text-shadow: none;
+    text-align: left;
+}
+/* body */
+.toast-body{
+    color: black;
+    text-align: left;
+    
+}
